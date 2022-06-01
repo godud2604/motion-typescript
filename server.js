@@ -3,10 +3,10 @@ const path = require('path')
 
 const app = express()
 
-app.use('/dist', express.static(path.resolve(__dirname, 'frontend', 'dist')))
+app.use('/dist', express.static(path.resolve(__dirname, 'dist')))
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'frontend', 'index.html')) // 파일 경로 설정 (frontend/index.html)
+  res.sendFile(path.resolve(__dirname, 'index.html'))
 })
 
 app.listen(8080)
