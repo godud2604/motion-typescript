@@ -1,4 +1,4 @@
-import { BaseComponent, Component } from 'component.js'
+import { BaseComponent, Component } from '../component.js'
 
 type OnCloseListener = () => void
 type OnSubmitListener = () => void

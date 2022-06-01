@@ -1,3 +1,4 @@
+import App from './app.js'
 import { navigateTo, router } from './utils/router.js'
 
 window.addEventListener('popstate', router)
@@ -12,4 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
   router()
+
+  new App(document.querySelector('#app')! as HTMLElement)
 })
