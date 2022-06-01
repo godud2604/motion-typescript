@@ -8,4 +8,6 @@ export default class AbstractView {
   async getHtml() {
     return ''
   }
+
+  onAddDialog() {}
 }

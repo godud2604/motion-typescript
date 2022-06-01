@@ -1,16 +1,16 @@
 import AbstractView from './AbstractView.js'
 
-export default class Settings extends AbstractView {
+export default class Todo extends AbstractView {
   constructor() {
     super()
-    this.setTitle('Settings')
+    this.setTitle('Todo')
   }
 
   async getHtml() {
     return `
-      <h1>Settings</h1>
+      <h1>Todo</h1>
       <p>
-        Settings
+        Todo
       </p>
     `
   }
