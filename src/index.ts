@@ -5,7 +5,7 @@ import '../style.css'
 window.addEventListener('popstate', router)
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('임시 입니다')
+  console.log('2webpack change')
   document.body.addEventListener('click', (e) => {
     let element = e.target! as HTMLAnchorElement
 

@@ -7,7 +7,7 @@ module.exports = {
   entry: './dist',
   output: {
     path: path.join(__dirname, './root'),
-    filename: 'build.js',
+    filename: '[name].[contenthash].js',
   },
   module: {
     rules: [
