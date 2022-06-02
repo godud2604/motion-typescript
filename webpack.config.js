@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
   entry: './dist',
   output: {
-    path: path.join(__dirname, './public'),
+    path: path.join(__dirname, './root'),
     filename: 'build.js',
   },
   module: {
