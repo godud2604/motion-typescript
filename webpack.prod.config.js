@@ -6,7 +6,7 @@ module.exports = {
   entry: './dist',
   output: {
     path: path.join(__dirname, 'public'),
-    filename: '[name].[contenthash].js',
+    filename: 'bundlie.js',
   },
   plugins: [
     new HtmlWebpackPlugin({

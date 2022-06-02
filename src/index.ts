@@ -13,6 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
   router()
-
   new App(document.querySelector('#app')! as HTMLElement)
 })

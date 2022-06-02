@@ -6,7 +6,6 @@ export default class App {
 
     const addBtn = document.querySelector('#add-btn')! as HTMLButtonElement
     addBtn.addEventListener('click', () => {
-      console.log('클릭')
       // 1. 모달창이 나오게 한다.
       const dialog = new InputDialog()
       dialog.attachTo(appRoot)
