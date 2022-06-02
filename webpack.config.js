@@ -6,7 +6,7 @@ module.exports = {
   mode: 'production',
   entry: './dist',
   output: {
-    path: path.join(__dirname, './root'),
+    path: path.join(__dirname, './public'),
     filename: '[name].[contenthash].js',
   },
   module: {
