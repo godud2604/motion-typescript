@@ -6,7 +6,7 @@
   "scripts": {
     "node-sass": "node-sass",
     "sass": "node-sass -wr --source-map true styles/main.scss ./style.css",
-    "start": "webpack serve --open",
+    "start": "tsc -w & webpack serve --open & npm run sass",
     "build": "tsc && webpack --config webpack.config.js"
   },
   "keywords": [],
