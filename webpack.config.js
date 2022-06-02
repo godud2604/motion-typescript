@@ -1,6 +1,30 @@
-const developmentConfig = require('./webpack.dev.config')
-const productionConfig = require('./webpack.prod.config')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = (env, { mode }) => {
-  return mode === 'production' ? productionConfig : developmentConfig
+module.exports = {
+  mode: 'development',
+  entry: './dist',
+  output: {
+    path: path.join(__dirname, './public'),
+    filename: 'build.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: ['file-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+    }),
+  ],
 }

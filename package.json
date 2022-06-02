@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "node-sass": "node-sass",
-    "sass": "node-sass -wr --source-map true styles/main.scss ./public/style.css",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "webpack --config webpack.config.js --mode=development",
-    "build:prod": "webpack --config webpack.config.js --mode=production",
-    "serve": "webpack serve"
+    "sass": "node-sass -wr --source-map true styles/main.scss ./style.css",
+    "start": "webpack serve --open",
+    "build": "webpack --config webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -18,12 +16,19 @@
     "express": "^4.18.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.7.2",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.1"
