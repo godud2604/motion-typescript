@@ -1,17 +1,31 @@
+import { MediaSectionInput } from './components/dialog/input/media-input.js'
 import { InputDialog } from './components/dialog/dialog.js'
+import Image from './components/view/Image.js'
+import StorageAPI from './utils/storageAPI.js'
 
 export default class App {
   constructor(appRoot: HTMLElement) {
-    console.log(appRoot)
-
     const addBtn = document.querySelector('#add-btn')! as HTMLButtonElement
     addBtn.addEventListener('click', () => {
-      // 1. 모달창이 나오게 한다.
       const dialog = new InputDialog()
+      const mediaInput = new MediaSectionInput()
+      dialog.addChild(mediaInput)
       dialog.attachTo(appRoot)
-      // 2. 모달창 닫기 버튼 클릭 시, 모달창 제거
-
-      // 3. 모달창 Add 버튼 클릭 시, page에 addChild(image)
+      dialog.setOnCloseListener(() => {
+        dialog.removeFrom(appRoot)
+      })
+      dialog.setOnSubmitListener(() => {
+        new Image(mediaInput.title, mediaInput.url).attachTo(appRoot)
+        const imageStorage = {
+          id: Math.floor(+new Date() / 1000),
+          title: mediaInput.title,
+          url: mediaInput.url,
+          updated: '',
+          kind: 'image',
+        }
+        StorageAPI.saveElement(imageStorage)
+        dialog.removeFrom(appRoot)
+      })
     })
   }
 }

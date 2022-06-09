@@ -1,6 +1,7 @@
 import Image from '../components/view/Image.js'
 import Todo from '../components/view/Todo.js'
 import Note from '../components/view/Note.js'
+import StorageAPI from './storageAPI.js'
 
 export type ConstructorFunctionType = {
   new (): void
@@ -21,9 +22,9 @@ export const navigateTo = (url: string) => {
 }
 
 const routes = [
-  { path: '/', view: Image, btn: 'Image Add' },
-  { path: '/todo', view: Todo, btn: 'Todo Add' },
   { path: '/note', view: Note, btn: 'Note Add' },
+  { path: '/todo', view: Todo, btn: 'Todo Add' },
+  { path: '/image', view: Image, btn: 'Image Add' },
 ]
 
 export const router = async () => {
@@ -48,7 +49,18 @@ const routerView = async (potentialMatches: PotentialMatchesType) => {
   if (view != undefined && route != undefined) {
     const app = document.querySelector('#app')! as HTMLElement
     const addBtn = document.querySelector('#add-btn')! as HTMLButtonElement
-    app.innerHTML = await view.getHtml()
+    const getStorage = StorageAPI.getAllElements()
+    const getStorageMatchPath = getStorage.filter(
+      (element: any) => element.kind === route.path.slice(1)
+    )
+    console.log(getStorageMatchPath)
+    if (getStorageMatchPath != []) {
+      // TODO : 여기서 부터 진행
+      // 빈배열이 아닐 때만 localStorage에 저장해둔 것 나타내게
+      console.log('오케잇')
+    } else {
+      app.innerHTML = await view.getHtml()
+    }
     addBtn.innerHTML = route.btn
   }
 }
