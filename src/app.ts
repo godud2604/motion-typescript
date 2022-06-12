@@ -61,6 +61,10 @@ export default class App {
         dialog.removeFrom(this.dialogRoot)
       })
       dialog.setOnSubmitListener(() => {
+        if (!input.title) {
+          alert('제목을 입력해주세요.')
+          throw new Error('제목을 입력해주세요.')
+        }
         const image = makeSection(input)
         this.page.addChild(image)
         dialog.removeFrom(this.dialogRoot)
