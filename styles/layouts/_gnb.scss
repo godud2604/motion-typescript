@@ -1,11 +1,8 @@
 .gnb {
-  margin-bottom: 40px;
-
-  &-nav {
-    padding: 40px 10px 20px;
-  }
+  margin: 40px;
 
   &-nav-list {
+    width: 100%;
     @include flexbox(between);
   }
 
@@ -20,7 +17,7 @@
     border: 3px solid $background;
 
     button {
-      @include text-style(13, $tertiary);
+      @include text-style(14, $blue-dark);
       font-weight: 900;
     }
   }

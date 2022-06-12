@@ -28,9 +28,14 @@
 }
 
 .form-container {
-  padding: 10px;
+  @include flexbox('center', 'center');
   @include text-style(16, $black);
+  padding: 10px;
   font-weight: 900;
+
+  input, textarea {
+    padding: 10px 10px 10px 20px;
+  }
 }
 
 .dialog-submit {

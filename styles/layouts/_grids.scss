@@ -9,10 +9,10 @@ $md-max-container: 960px + $md-margin * 2;
 
 $lg-columns: 12;
 $lg-unit: 75px;
-$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+$lg-max-container: 700px;
 
 .container {
-  width: 100%;
+  max-width: 100%;
   padding: 0 $sm-margin;
   margin: 0 auto;
 

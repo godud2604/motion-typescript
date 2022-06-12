@@ -27,4 +27,8 @@ module.exports = {
       template: 'index.html',
     }),
   ],
+  devServer: {
+    static: './dist',
+    hot: true,
+  },
 }
